@@ -1,0 +1,78 @@
+<!--pages/luckCenter/index.wxml-->
+
+<view class='isashow' wx:if='{{ loadIsShow }}'>
+     <image src='../../resources/loading.gif' mode='widthFix'></image>
+</view>
+
+<view class='body' wx:else>
+    <view class='topData'>
+      <view class='round'>
+          <image src='../../resources/sb_b.png' style="top:{{top}}%"></image>
+          <image src='../../resources/sb_a.png' style="top:{{top}}%"></image>
+          <text>{{ luckData }}</text>
+      </view> 
+
+    </view>
+    <view class='myFriends_box'>
+        <view class='myFriends'>
+              <block wx:for='{{ imgs }}' wx:key="">
+                  <image src='{{ item }}'></image>        
+              </block>
+              <block wx:for='{{ btnArr}}' wx:key="index">
+                 <button open-type="share">+</button>             
+              </block>
+        </view>
+        <view class='tip_txt'>
+          <text>每成功邀请一位好友可获得20幸运币</text>
+          <text bindtap='goLuckRecord'>幸运币记录</text>
+        </view>     
+    </view>
+    <view class='exchangeMall'>
+        <view class='title'><text>兑换商城</text></view>
+        <view class='goodsList'>
+
+         <block wx:for="{{ goodsList }}" wx:key='index'>
+           <navigator url="/pages/exchangeGoods/index?goodsId={{ item.goods_id }}" hover-class="none" class='money' class='goods'>
+              <image src='{{ item.goods_img }}' mode='widthFix'></image>
+              <text class='goodsName'>{{ item.goods_name }}</text>
+              <view class='bottExchange'>
+                  <view>
+                     <image src='../../resources/jingb.png'></image>
+                     <text>{{ item.conversion_luckycoin }}</text>
+                  </view>
+                  <button>立即兑换</button>         
+              </view>
+           </navigator> 
+         </block>
+
+        </view>
+    </view>
+</view>
+<!-- 签到成功弹窗 -->
+<scroll-view class='Popup' wx:if="{{ isSuccessful }}" bindtap='closePop'>
+  <view class='parent'>
+      <view class='contet'>
+          <view class='imgs'><image src='../../resources/qiandao_bj.png' mode='widthFix'></image></view>
+          <view class='qiandaoNum'>你已连续签到<text>{{ qiandao_day }}</text>天</view>
+          <view class='signIn'>
+                 <view class="box {{item <= qiandao_day? 'checked' :''}}" wx:for='{{ signArr }}' wx:key='{{ index }}'>
+                     <view>
+                          <text>第{{ item }}天</text>
+                          <image src='../../resources/jingb.png' mode='widthFix'></image>
+                     </view>
+                     <text class='tiip'>+{{5+index}}幸运币</text>
+                 </view>                 
+                 <view class='kong'>
+                 
+                 </view>
+          </view>
+  
+            <!-- <view class='btun'>
+                <button open-type="share">分享给好友</button>
+                <button bindtap='closePoup'>我知道了</button>
+            </view> -->
+
+            <view class='closeBtn'>×</view>
+      </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,14 @@
+<template name="weCropper">
+    <!-- <view class='tip' style="color:#fff;position:absolute;top:20rpx;left:0;font-size:26rpx;text-align:center;z-index:999999;width:100%;">
+        <text style="color:#fff;">移动、缩放图片进行裁剪</text>
+    </view> -->
+    <canvas
+            class="cropper"
+            disable-scroll="true"
+            bindtouchstart="touchStart"
+            bindtouchmove="touchMove"
+            bindtouchend="touchEnd"
+            style="width:{{width}}px;height:{{height}}px;background-color: rgba(0, 0, 0, 0.8)"
+            canvas-id="{{id}}">
+    </canvas>
+</template>

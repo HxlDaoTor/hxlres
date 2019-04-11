@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<view class='isashow' wx:if='{{ loadIsShow }}'>
+     <image src='../../resources/loading.gif' mode='widthFix'></image>
+</view>
+
+
+<view class='body' wx:else>
+  <view style="height:30px;background:#ff5555;"></view>
+  <view class='topBaner'>
+    <view class='money'  bindtap='exchangeMall'>
+      <view> <text>{{ luckyAmount }}</text>币</view>
+      <text class='iconfont icon-icon'> 幸运币</text>
+    </view>
+    <!-- <view class='money'>
+      <view> <text>0.00</text>元</view>
+      <text class='txtbtn'>提现＞</text>
+    </view> -->
+  </view>
+  <view class='iconBtn'>
+    <view bindtap='signIn' class='signIn'>
+      <image src='../../resources/qiandao.png'></image>
+      <text class='{{is_qiandao == 1?"issig":""}}'>{{is_qiandao == 1?"每日签到":"已签到"}}</text>
+    </view>
+    <view bindtap='exchangeMall'>
+      <image src='../../resources/shangpin.png'></image>
+      <text>兑换商城</text>
+    </view>
+    <!-- <view>
+      <image src='../../resources/liwu.png'></image>
+      <text>幸运大礼</text>
+    </view> -->
+  </view>
+  <view class='fl_bj'><text class='title'>每日福利</text></view>
+  <view class='listgoods'>
+     <block wx:for="{{ welfarelist }}" wx:key="{{ index }}">
+          <navigator url="/pages/homDetails/index?relea_id={{ item.relea_id }}" hover-class="navigator-hover" class='goods'>
+            <image src='{{ item.prize_img }}'></image>
+            <view class='titl'>奖品：{{ item.prize_name }} <text>×{{ item.prize_amount }}</text></view>
+            <text class='tipp'>{{item.kjtimes}}自动开奖</text>
+            <text class='sponsorship'>{{item.wxnick}} 赞助</text>
+            <text class='isParticipate' wx:if='{{ item.is_join_lucky == 0 }}'>已参与</text>
+          </navigator>     
+     </block>
+
+  </view>
+   <view class='fl_bj'><text class='title'>自助福利</text></view>
+   <view class='listdgs'>
+   <block wx:for="{{ _welfarelist }}" wx:key="{{ index }}">
+      <navigator url="/pages/homDetails/index?relea_id={{ item.relea_id }}" hover-class="navigator-hover" class='goods'>
+        <view class='imgsve'>
+          <image src='{{ item.prize_img }}'></image>
+        </view>
+         <view class='describe'>
+                 <view class='darwName'>奖品：{{ item.prize_name }}<text> ×{{ item.prize_amount }}</text></view>
+                 <view class='sponsors'><text> {{ item.wxnick }}赞助</text></view>
+                 <text class='lasttip'> {{item.kjtimes}}自动开奖</text>
+         </view>
+      </navigator>   
+   </block>
+   
+   </view>
+</view>
+<!-- <view style="margin-bottom:80px;" bindtap="tiaoshi">调试</view> -->
+<!-- Tabbar -->
+<comTab my-property='0' wx:if='{{ !loadIsShow }}'/>
+

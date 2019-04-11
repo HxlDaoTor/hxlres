@@ -1,0 +1,27 @@
+<!--jubao.wxml-->
+<view class="containe">
+<form bindsubmit="sed" >
+     <text class="txtrad">请选择投诉原图</text>
+    <view class="cont-radio">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}" wx:key=''>
+        <text>{{item.value}}</text>
+          <radio value="{{item.name}}"  name="amkl" disabled="{{item.checked}}"/>
+        </label>
+      </radio-group>
+  </view>
+  <!-- <text  class="txtrad">请填写您的个人信息，方便我们联系您</text>
+  <view class="cont-radio">
+      <view class="phone">
+             <text>手机号</text>
+            <input placeholder="选填" type="number" bindinput='EventHandleNm' name="phone"/>
+      </view>
+      <view class="weixinhao">
+            <text>微信号</text>
+            <input placeholder="选填" type="text" name="wxhao"/>
+      </view>      
+  </view> -->
+
+  <button type="primary" class='btn' form-type="submit">提交</button>
+  </form>
+</view>

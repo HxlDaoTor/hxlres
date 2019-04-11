@@ -1,0 +1,43 @@
+/* jubao.wxss */
+.containe {
+    box-sizing: border-box;   
+  background-color: #f3f3f3;
+  padding-bottom:40rpx;
+}
+.txtrad {
+  display: block;
+    height: 80rpx;
+  line-height: 80rpx;
+   border-bottom: 1rpx solid #ccc;
+   color:#999;
+   padding: 0 20rpx;
+}
+.cont-radio {
+  background:#fff;
+  padding:0 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.radio,.phone,.weixinhao{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ccc;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.radio:last-child ,.phone:last-child,.weixinhao:last-child{
+  border: none;
+}
+.cont-radio view text {
+   width: 20%;
+}
+.cont-radio input{
+  width: 80%;
+   height: 100rpx;
+  line-height: 100rpx;
+}
+.btn {
+  margin: 30rpx 20rpx 100rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  
+}

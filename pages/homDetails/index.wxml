@@ -1,0 +1,149 @@
+<!--pages/homDetails/index.wxml-->
+
+<view class='isashow' wx:if='{{ loadIsShow }}' >
+     <image src='../../resources/loading.gif' mode='widthFix'></image>
+</view>
+
+<view wx:else>
+<view class='bdy'>
+   <view class='goods'>
+       <swiper autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{ pagesData.goodsImg }}" wx:key="{{ index }}">
+          <swiper-item>
+            <image src="{{ item.prize_img }}" mode='widthFix'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class='txt_instr'>
+         <text class='title'>一等奖：{{ pagesData.goodsName }}×{{ pagesData.goodsNumber }}</text>
+         <text class='tip'>{{ pagesData.drawTimes }} 自动开奖</text>
+      </view>
+      <view class='sponsors'>
+         <text>赞助商</text>
+         <text>{{ pagesData.patron }}</text>
+      </view>  
+   </view>
+   <!-- 查看中奖者信息收货信息 wx:if='{{ isAddress }}' -->
+   <view class='address' bindtap='jumpWinning' wx:if='{{ isAddress }}'>
+      <text>查看中奖者收货信息</text><text class='iconfont icon-icon'></text>
+   </view>
+
+    <view class='instructions'>
+       <view class='textCot'>
+          <text>{{ pagesData.instructions }}</text>
+          <!-- <text>通过微信与QQ为用户提供优质的保险服务</text>        -->
+
+       </view>
+       <view class='wXcopy' wx:if='{{ pagesData.copyTxt }}'>
+              <text class='titleTxt'>领奖请复制添加</text>
+              <view class='copy'>
+                    <input  placeholder="请输入要复制的内容" value='{{ pagesData.copyTxt }}' disabled='true' placeholder-style='color:#ababab;'/>  
+                    <text bindtap='copyTxtEven' data-key="{{ pagesData.copyTxt }}">一键复制</text>  
+              </view>  
+          </view>
+        <!-- <view>
+           <text>微保全面保障大礼包包含z重大险,</text> 
+           <text>乘车意外险，航班延误险，有效期一年</text>
+           <text>发生意外最高赔付100万,</text>
+           <text>中奖者只需要自动填写被保险人身份信息</text>
+        </view> -->
+    </view>
+    <view class='luckdraw'>
+          <!-- 按钮转换 -->
+          <form class="catchForm" report-submit bindsubmit="catchSubmit" wx:if ='{{ isDraw }}'>
+            <view class='drawBtn' >          
+              <button class='partic' open-type="getUserInfo" bindgetuserinfo="onGotUserInfo"  form-type="submit" >{{ luckytxt }}</button> 
+              <view></view>       
+            </view> 
+           </form>  
+          <view class='involved' wx:elif ='{{ isShowBtn }}'>
+             {{btnContxt}}
+          </view>
+          <!-- 中奖者信息  -->
+          <view class='informa' wx:elif ='{{ isInformation }}'>
+             <view class='zjContext'>
+                
+                   <block>
+                        <view class='contxt' wx:if = '{{ pagesData.luckyDraw > 0 }}'>
+                            <text>{{ pagesData.winner.winnerTitl }}</text>
+                            <text>{{ pagesData.winner.winnerContxt }}</text>
+                        </view>
+                        <view wx:else class='contxtFailure'>
+                            <text>开奖失败:逾期未有人参与该抽奖</text>
+                        </view>
+                        <view class='butn' wx:if = '{{  pagesData.winner.isTo }}'>
+                              <button wx:if='{{ pagesData.winner.isWinner }}' bindtap='writeAdderss'>填写收货地址</button>
+                              <button bindtap='jumpHome'>更多抽奖福利</button>
+                        </view>
+                    </block>
+                    <block wx:if = '{{ pagesData.luckyDraw > 0 }}'>
+                        <view class='titlet'>
+                              <text>中奖者名单</text>                    
+                        </view>
+                        <view class='winner'>
+                          <image src='{{ pagesData.winner.img }}'></image>
+                          <text>{{ pagesData.winner.nick }}</text>
+                        </view>                    
+                    </block>
+             </view>
+          </view>
+           <!-- 中奖者信息结束  -->
+
+          <view class='txtTip'>已有{{ pagesData.luckyDraw }}人参与，<text bindtap='allHeadImg'>查看全部＞</text>
+          </view>  
+          <view class='headPor'>
+               <block wx:for='{{ pagesData.luckyDrawImgs }}' wx:key="{{ index }}">
+                   <image src='{{ item }}'></image>    
+               </block>
+               <block wx:if='{{ pagesData.luckyDrawImgs.length > 6 }}' wx:key="{{ index }}">
+                  <view></view>
+                  <view></view>
+                  <view></view>
+                  <view></view> 
+                   <view></view>  
+                   <view></view> 
+                   <view></view>
+                   <view></view>                  
+               </block>
+
+          </view> 
+          <!-- <view class='complaints'>我要投诉＞</view> -->
+    </view>
+    <view class='details'>
+       <text>奖品介绍：</text>
+       <text class='detaShuom'>{{ pagesData.goodsIntroduction }}</text>
+        <view class='detaImg'>
+            <block wx:for='{{ pagesData.goodsImgsList }}'  wx:key="{{ index }}">
+                <image src='{{ item }}' mode='widthFix'></image>            
+            </block>       
+        </view>
+    </view>
+
+</view>
+<view class='fixed'>
+   <button open-type="share">分享该抽奖</button>
+   <button bindtap='jumpHome'>更多抽奖福利</button>
+</view>
+
+<!-- 回到首页home键 -->
+<view class='homeBack' wx:if='{{ pagesNum }}' bindtap='jumpHome'>
+   <image src='../../resources/home.png' mode='widthFix'></image>
+</view>
+</view>
+<!-- 参与成功弹窗 -->
+<scroll-view class='Popup' wx:if="{{ isSuccessful }}">
+  <view class='parent'>
+      <view class='bton'>
+            <view class='txt'>
+              <text>开奖时间为{{ pagesData.drawTimes }}</text>
+              <text>请留意开奖通知，不要错过哦~</text>            
+            </view>
+            <view class='btun'>
+                <button open-type="share">分享给好友</button>
+                <button bindtap='closePoup'>我知道了</button>
+            </view>
+      </view>
+  </view>
+</scroll-view>
+

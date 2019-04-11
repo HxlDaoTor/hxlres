@@ -1,0 +1,61 @@
+<!--pages/exchangeGoods/index.wxml-->
+<view class='exchangeMall'>
+  <view class='head'>
+    <image src='{{ detailedData.goods_img }}' mode='widthFix'></image>
+    <view class='luckMony'>
+      <text>{{ detailedData.conversion_luckycoin }}幸运币</text>
+      <text>￥{{ detailedData.price }}</text>
+    </view>
+  </view>
+  <view class='exchangeName'>
+     <view>
+         <text>{{ detailedData.goods_name }}</text>
+         <text class='ismail'>包邮</text>
+     </view>
+     <text class='goodsnum'>剩余{{ detailedData.goods_number }}件</text>
+  </view>
+  <view class='writAddr' bindtap='writeAddress'>
+      <view class='gimng'>
+        <text>送至</text>
+        <input type='text' value='{{ addressTxt }}' placeholder-style='color:#ababab' placeholder='请填写收货地址' disabled='false'></input>
+      </view>
+      <text class='iconfont icon-icon'></text>
+  </view>
+  <view class='instructions'>
+      <view class='titl'>兑换说明</view>
+      <text>{{ detailedData.explain }}</text>
+      <!-- <text>没人每日最多可兑换一件</text> -->
+  </view>
+  <view class='exchangeBtn'>
+      <button bindtap='goExchange'>立即兑换</button>
+  </view>
+</view>
+<!-- 签到成功弹窗 -->
+<scroll-view class='Popup' wx:if="{{ isSuccessful }}" bindtap='closePop'>
+  <view class='parent'>
+      <view class='contet'>
+             <text class='tilit'>兑换成功</text>
+             <text class='contt'>你目前还剩余幸运币</text>
+             <text class='tippo'>{{ luckIcon }}</text>
+             <button bindtap='jumpLuckHome'>兑换其他商品</button>
+            <!-- <view class='btun'>
+                <button open-type="share">分享给好友</button>
+                <button bindtap='closePoup'>我知道了</button>
+            </view> -->
+
+            <view class='closeBtn' bindtap='closePop'>×</view>
+      </view>
+  </view>
+</scroll-view>
+<!-- 授权弹窗 -->
+<scroll-view  wx:if="{{ isOpenSet }}" class='popupWin'>
+   <view class='popw'>
+        <view class='opupCt'>
+            <view class='contxt'>需要授权通讯地址才可以填写收货地址</view>
+            <view class='bttn'>
+              <button bindtap='closePoup'>取消</button>
+              <button open-type="openSetting" bindopensetting="settCallback">去设置</button>
+            </view>
+        </view>   
+   </view>
+</scroll-view>

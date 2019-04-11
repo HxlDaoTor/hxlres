@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myper/myper",
+    "pages/initiate/initiate",
+    "pages/luckCenter/index",
+    "pages/homDetails/index",
+    "pages/try/try",
+    "pages/cooper/index",
+    "pages/welfare/index",
+    "pages/goodsAddress/index",
+    "pages/winnerInfo/index",
+    "pages/luckList/index",
+    "pages/exchangeGoods/index",
+    "pages/problems/problem",
+    "pages/confirmTask/index",
+    "pages/luckRecord/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ff5555",
+    "navigationBarTitleText": "百鱼抽奖",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#2e3235",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/myper/myper",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true
+}

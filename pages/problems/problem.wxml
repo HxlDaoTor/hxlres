@@ -1,0 +1,19 @@
+<!--problem.wxml-->
+<view class="containe" wx:if='{{ isAtshow }}'>
+
+ <block wx:for="{{ list }}"  wx:key="this" >
+        <view class="viebtn {{ item.toggle?'color':''}} "  bindtap="logToggle" data-index="{{index}}"> 
+            <text>{{item.key}}</text> 
+            <text>≡</text>
+        </view> 
+        <view  wx:if="{{item.toggle}}" class="heidshow"> 
+            <text class="brightext">{{item.vales}}</text>
+        </view> 
+ </block>
+
+<button wx:if="{{show}}" send-message-img='true' class='posinCustomer' type="primary" style='margin-top:20rpx;' open-type="contact" >在线客服</button>
+</view>
+<view class='ve_image' wx:else>
+     <image src="../../resources/loading.gif"></image>
+</view>
+

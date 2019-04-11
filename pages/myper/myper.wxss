@@ -1,0 +1,177 @@
+/* pages/myper/myper.wxss */
+.body{
+  background:#f5f5f5;
+}
+.bj_tp{
+  background:#ff5555;
+  height:100px;
+}
+.top{
+  background:#fff;
+
+  margin:-60px 20px 10px;
+  border-radius: 8px;
+  padding:15px;
+}
+.top .info{
+  display:flex;
+  justify-content: space-between;
+align-items: center;
+  font-size: 14px;
+ margin: 10px 0;
+}
+.top .info .userInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.top .info .userInfo view{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  justify-content: center;
+}
+.top .info .addr{
+  color:#ababab;
+  font-size: 12px;
+  margin:0;
+  padding:0;
+  border:none;
+  background:none;
+}
+.top .info .addr::after{
+
+  border:none;
+}
+.top .info .addr .iconfont{
+  font-size: 12px;
+}
+.top .info .userInfo view button{
+  margin:6px 0 0;
+  border-radius: 20px;
+  border:1px solid #ff5555;
+  padding:0 6px;
+  font-size: 10px;
+  color:#ff5555;
+  background:none;
+  line-height: 18px; 
+  height:20px;
+}
+.top .info .userInfo view button::after{
+  border:none;
+}
+.top .info .userInfo view.hedImg{
+  height:50px;
+  width:50px;
+  border-radius: 50%;
+  background:url("https://img.koo4.cn/cjimgs/touxiang_.jpg") no-repeat center;  /* 背景 */
+  background-size: 100%;
+  overflow: hidden;
+  padding:0;
+}
+.top .info .userInfo view.hedImg image{
+  width:100%;
+  height:100%;
+  vertical-align: middle;
+}
+.top .record{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  padding:20px 10px 0;
+}
+.top .record view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top .record view text:first-child{
+  font-size: 14px;
+}
+.top .record view text:last-child{
+  color:#ababab;
+  margin-top:2px;
+}
+.luckmony{
+ 
+  background:#fff;
+  border-radius: 8px;
+  margin:0 20px 10px;
+  padding: 0 15px;
+}
+.luckmony .myluck{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+height: 50px;
+}
+.luckmony .myluck image{
+  width: 20px;
+  height:20px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.luckmony .myluck .iconfont{
+  font-size: 12px;
+  color:#ababab;
+}
+/*弹窗样式*/
+.popupWin{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.5);
+  z-index: 1000;
+
+
+}
+.popupWin .popw{
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.popupWin .popw .Popup{
+  width:80%;
+  background:#fff;
+
+ border-radius: 2px;
+ font-size: 14px;
+ color:#4d4d4d;
+}
+.popupWin .popw .Popup .contxt{
+  text-align: center;
+  height:56px;
+  line-height: 56px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.popupWin .popw .Popup .bttn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.popupWin .popw .Popup .bttn button{
+  width: 50%;
+  border:0;
+  background:none;
+  font-size: 14px;
+  border-radius: 0;
+  height: 40px;
+  line-height: 40px;
+}
+.popupWin .popw .Popup .bttn button:first-child{
+  border-right: 1px solid #f5f5f5;
+}
+.popupWin .popw .Popup .bttn button:last-child{
+  color:#2f5f91;
+}
+.popupWin .popw .Popup .bttn button::after{
+  border: none;
+}

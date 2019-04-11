@@ -1,2 +1,0 @@
-# hxlres
-my first repository

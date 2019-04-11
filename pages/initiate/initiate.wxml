@@ -1,0 +1,84 @@
+<!--pages/initiate/initiate.wxml-->
+<view class='bdy'>
+       <form bindsubmit="formSubmit" report-submit >
+            <view class='prizeTp'>
+                  <view class='btnImg' bindtap='uploadimg' wx:if='{{ showimg }}'>
+                      <image src='../../resources/xiangji.jpg'></image>
+                      <text>请添加奖品图片</text>
+                  </view>
+                  <image class="uploadimg" src="{{uploadImg}}" bindtap='uploadimg' wx:else mode="scaleToFill"></image>
+            </view>
+            <view class='specifications'> 
+              <view class='specName'>
+                  <text>奖品名称</text>
+                  <input  placeholder="请输入奖品名称" name='goodsName' placeholder-style='color:#ababab;'/>
+              </view>
+              <view class='specName'>
+                  <text>奖品数量</text>
+                  <view><text>个</text><input type='number' name='goodsNumber' placeholder="数量" placeholder-style='color:#ababab;' bindinput="numInputEv" /></view>
+              </view>       
+            </view>
+            <view class='conditions'>
+              <text>{{ tiajianTxt }}</text> 
+              <!-- 开奖条件暂时为自动开奖 bindtap='modify'  -->
+              <text>开奖条件</text>
+            </view>
+            <view class='times'>
+                <text>开奖时间</text>
+                <picker mode="multiSelector" value="{{multiIndex}}" range="{{multiArray}}"  bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" >
+                  <text>{{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}:{{multiArray[2][multiIndex[2]]}} ></text>
+                </picker>
+            </view>
+            <view class='conditions'>
+              <text>抽奖说明</text>  
+              <text>选填</text>
+            </view>
+            <view class='txter'>
+              <textarea  wx:if="{{ isTxtShow }}" name='goodsInstructions' placeholder="请输入此次抽奖的说明" />
+            </view> 
+            <!-- 高级功能 -->  
+            <view class='senior'>
+              <view class='copy'>
+                    <input  placeholder="请输入要复制的内容" name='copyTxt' placeholder-style='color:#ababab;'/>  
+                    <text>一键复制</text>  
+              </view>  
+                <view class='conditions'>
+                  <text>奖品介绍</text>  
+                  <text>选填</text>
+              </view>
+              <view class='caption'>
+                  <textarea  placeholder="请输入奖品介绍" name='goodsIntroduce' placeholder-style="color:#ababab"/> 
+                  <view class='picture'>  
+                          <block wx:for="{{imgArr}}" wx:key=''>
+                              <view class='imgs' bindtap='deleteImg' data-key='{{ index }}'>
+                                <image src="{{ item }}" mode='aspectFill'></image>
+                                <text>×</text>
+                              </view>               
+                          </block>                        
+                          <text class='jia' bindtap='uploadimgXq'>+</text>
+                          <view class='nul'></view> 
+                          <view class='nul'></view>
+                          <view class='nul'></view>  
+                  </view>     
+              </view>   
+            </view>       
+       
+          <!-- <view class='linkTip'>
+              <text>意见反馈</text>
+              <text>我要上首页</text>
+          </view> -->
+          <!-- 暂时直接提交 -->
+          <view class='submit' wx:if="{{ isShouquan }}">
+              <button form-type="submit">下一步</button>
+          </view>
+          <view class='submit' wx:else>
+              <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">授权</button>
+          </view>
+     </form>   
+</view>
+<!-- 弹层 -->
+<scroll-view class='popWin' wx:if="{{ isTcShow }}" bindtap='closePop'>
+   <scroll-view class='contet'>
+      <view wx:for='{{ conditions }}' wx:key="" data-key="{{ index }}" bindtap='clickPopup'>{{item.txt}}</view>
+   </scroll-view>
+</scroll-view>

@@ -1,0 +1,435 @@
+/* pages/homDetails/index.wxss */
+.bdy{
+  background:#f5f5f5;
+  color:#4d4d4d;
+  min-height: 100vh;
+  overflow:hidden;
+
+}
+.goods{
+  background:#fff;
+}
+.goods image{
+  width:100%;
+  height:150px;
+}
+.txt_instr{
+font-size: 14px;
+padding:10px 15px;
+border-bottom: 1px solid #f2f2f2;
+}
+.txt_instr text{
+  display: block;
+
+}
+.txt_instr text.title{
+  line-height: 20px;
+}
+.txt_instr .tip{
+  margin-top: 4px;
+  font-size:12px;
+  color:#ababab;
+}
+.sponsors{
+  display: flex;
+  padding:15px;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 14px;
+
+}
+.address{
+  margin-top: 10px;
+ background:#fff;
+ display: flex;
+ padding:15px;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 14px;  
+}
+.address text:last-child{
+  color:#808080;
+}
+.instructions{
+  background:#fef7e5;
+  border-top:1px solid #ece6d6;
+  border-bottom:1px solid #ece6d6;
+  margin-top:10px;
+  padding:15px;
+}
+.instructions .textCot{
+  margin-bottom:20px;
+
+}
+.instructions .textCot text{
+  color:#977751;
+  font-size: 14px;
+  line-height: 22px;
+  display: block;
+}
+.instructions .wXcopy{
+
+}
+.instructions .wXcopy .titleTxt{
+  display: block;
+  color:#977751;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.instructions .wXcopy .copy{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+ margin-top:6px;
+}
+.instructions .wXcopy .copy input{
+  background:rgba(164,116,58,.2);
+  padding:4px 10px;
+  width:60%;
+  text-align: center;
+  color:#855f31;
+  border-radius: 2px;
+}
+.instructions .wXcopy .copy text{
+   height:35px;
+   line-height: 35px;
+   background:#fae3c4;
+   border-radius: 20px;
+   padding:0 20px;
+   color:#c7924b;
+}
+.luckdraw{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  padding:15px 0;
+}
+.luckdraw .drawBtn{
+  position: relative;
+  width:100px;
+  height: 100px;
+}
+.luckdraw .drawBtn .partic{
+   display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  color:#fff;
+  font-size: 16px;
+  width: 100px;
+  height:100px;
+  border-radius: 50%;
+  background:#ff5555;
+  position: absolute;
+  z-index: 1;
+}
+.luckdraw .drawBtn .partic::after{
+  border:none;
+}
+.luckdraw .drawBtn view:last-child{
+  content: '';
+  width: 100px;
+  height:100px;
+  background:#ff5555;
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 0;
+  animation: warn 1s ease-out;
+   animation-iteration-count: infinite;
+}
+
+@keyframes warn {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0.0;
+    }
+}
+.luckdraw .involved{
+  width:100px;
+  height:100px;
+  background:#f27d7d;
+  border-radius:50%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+    justify-content:center;
+    font-size:16px;
+    color:#fff;
+}
+.luckdraw .informa{
+  background:#fff;
+  width: 100%;
+  margin-top:10px;
+  padding:15px;
+  box-sizing: border-box;
+}
+.luckdraw .informa .zjContext{
+  border:3px solid #e4ddd3;
+  width: 100%;
+  height:100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:20px 0;
+}
+.luckdraw .informa .zjContext .contxt{
+  text-align: center;
+  font-size: 16px;
+  color:#e9564f;
+  font-weight: bold;
+}
+.luckdraw .informa .zjContext .contxt text{
+  display: block;
+}
+.luckdraw .informa .zjContext .contxt text:last-child{
+  margin-top:6px;
+}
+.luckdraw .informa .zjContext .contxtFailure{
+  font-size: 16px;
+}
+.luckdraw .informa .zjContext .butn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+  width: 100%;
+}
+.luckdraw .informa .zjContext .butn button{
+  width: 36%;
+  height:40px;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 0;
+  padding:0;
+  margin:0;
+}
+.luckdraw .informa .zjContext .butn button:first-child{
+  background:#ff5555;
+  color:#fff;
+  margin-right: 10px;
+}
+.luckdraw .informa .zjContext .butn button:last-child{
+  background: #fff;
+  color: #4d4d4d;
+  border:1px solid #4d4d4d;
+}
+.luckdraw .informa .zjContext .titlet{
+  width: 60%;
+   font-size:12px;
+  text-align: center;
+  color:#808080;
+  position: relative;
+}
+.luckdraw .informa .zjContext .titlet::after{
+  content: '';
+  position: absolute;
+  top:50%;
+  right: 0;
+  left: 0;
+  height:1px;
+  background:#ababab;
+}
+.luckdraw .informa .zjContext .titlet text{
+  background:#fff;
+  padding:0 10px;
+  position: relative;
+  z-index: 1;
+}
+.luckdraw .informa .zjContext .winner{
+  margin-top:20px;
+  font-size: 12px;
+  color:#4d4d4d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.luckdraw .informa .zjContext .winner image{
+  width: 36px;
+  height:36px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+.luckdraw .txtTip{
+  color:#808080;
+  font-size: 12px;
+    margin:10px 0;
+    line-height: 22px;
+}
+.luckdraw .txtTip text{
+  color:#4493d6;
+}
+.headPor{
+  display:flex;
+  flex-wrap: wrap;
+  /* width:80%; */
+  padding:0 30px;
+  justify-content: space-around;
+}
+.headPor view{
+  width: 32px;
+  height:0;
+}
+.headPor image{
+  width: 30px;
+  height:30px;
+  margin-bottom: 3px;
+  margin-right: 2px;
+}
+.headPor image:last-child{
+  margin-right: 0;
+}
+.complaints{
+  color:#ababab;
+  font-size: 10px;
+  margin-top:15px;
+}
+.details{
+  background:#fff;
+  padding:15px;
+  font-size: 14px;
+  color:#4d4d4d;
+  margin-bottom: 80px;
+}
+.details text{
+  display: block;
+}
+.details text.detaShuom{
+ margin-top:10px;
+}
+.details image{
+  width: 100%;
+vertical-align: middle;
+padding:0;
+}
+.details .detaImg{
+  margin-top:15px;
+}
+.fixed{
+  position: fixed;
+  height:60px;
+  background:#fff;
+  border-top: 1px solid #e8e8e8;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fixed button{
+  border-radius:20px;
+  height:40px;
+  line-height: 39px;
+ font-size: 14px;
+ border:none;
+ width:36%;
+}
+button::after{
+  border:none; 
+}
+.fixed button:first-child{
+  background:#ff5555;
+  color:#fff;
+}
+.fixed button:last-child{
+  border:1px solid #4d4d4d;
+  color:#4d4d4d;
+}
+.Popup{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.8);
+  z-index: 1000;
+}
+.Popup .parent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:100%;
+}
+.Popup .bton{
+ width:270px;
+ height:249px;
+background:url("https://img.koo4.cn/cjimgs/5c95cf08908fc.png") no-repeat center; /* 弹窗背景 弹窗 */
+background-size: 100%;
+margin-top:-20px;
+}
+.Popup .bton .txt{
+  color:#977751;
+  font-size: 14px;
+  margin:80px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Popup .bton .txt text{
+
+}
+.Popup .bton .btun{
+  margin-top:80px;
+  display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.Popup .bton .btun button{
+  height:36px;
+  line-height: 36px;
+  border-radius: 20px;
+  font-size: 14px;
+  width: 40%;
+  margin:0;
+}
+.Popup .bton .btun button::after{
+  border:none;
+}
+.Popup .bton .btun button:first-child{
+  background: #f8bc04;
+  color:#836404;
+  margin-right: 15px;
+}
+.Popup .bton .btun button:last-child{
+  background: #f6505c;
+  color:#fff;
+}
+
+.homeBack{
+  position: fixed;
+  bottom: 70px;
+  right:10px;
+  width: 40px;
+  height:40px;
+  background:#fff;
+  border:1px solid #ababab;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.homeBack image{
+  width: 100%;
+  height:100%;
+  vertical-align: middle;
+}

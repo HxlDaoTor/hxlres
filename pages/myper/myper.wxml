@@ -1,0 +1,77 @@
+<!--pages/myper/myper.wxml-->
+<view class='body'>
+  <view class='bj_tp'></view>
+  <view class='top'>
+         <view class='info'>
+             <view class='userInfo'>
+                <view class='hedImg'>
+                  <image src='{{ headImg }}'></image>              
+                </view>
+                <view>
+                    <text>{{ nickName }}</text>
+                    <button  open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">同步微信资料</button>
+                </view>
+              </view>
+              <button class='addr' bindtap='writeAddress'>
+               <text class='iconfont icon-icon'> 收货地址</text>
+              </button>        
+         </view>
+       <!-- 抽奖显示 -->
+         <view class='record'>
+             <view data-key='1' bindtap='luckNum'>
+                  <text>{{ participateNum }}</text> 
+                  <text>参与抽奖</text>
+             </view>
+             <view data-key='2' bindtap='luckNum'>
+                  <text>{{ initiateNum }}</text> 
+                  <text>发起抽奖</text>
+             </view>
+              <view data-key='3' bindtap='luckNum'>
+                  <text>{{ winnNum }}</text> 
+                  <text>中奖记录</text>
+             </view>
+         </view> 
+
+
+   </view>
+   <view class='luckmony'>
+     <navigator url="/pages/luckCenter/index?frm_qiandao=0" hover-class="none" class='myluck'>
+          <view>
+            <image src='../../resources/jingb.png'></image>
+            <text>幸运币中心</text>
+          </view>
+          <view>{{ luckyNum }}<text class='iconfont icon-icon'></text></view>
+     </navigator>
+   </view>
+
+   <view class='luckmony'>
+     <navigator url="/pages/problems/problem" hover-class="none" class='myluck'>
+          <view>
+            <image src='../../resources/wenti.png'></image>
+            <text >常见问题</text>
+          </view>
+         <text class='iconfont icon-icon'></text>
+     </navigator>
+       <navigator url="/pages/cooper/index" hover-class="none" class='myluck'>
+          <view>
+            <image src='../../resources/hezuo.png'></image>
+            <text>商务合作</text>
+          </view>
+          <text class='iconfont icon-icon'></text>
+       </navigator>        
+   </view>
+<!-- 授权弹窗 -->
+<scroll-view  wx:if="{{ isOpenSet }}" class='popupWin'>
+   <view class='popw'>
+        <view class='Popup'>
+            <view class='contxt'>需要授权通讯地址才可以填写收货地址</view>
+            <view class='bttn'>
+              <button bindtap='closePoup'>取消</button>
+              <button open-type="openSetting" bindopensetting="settCallback">去设置</button>
+            </view>
+        </view>   
+   </view>
+</scroll-view>
+
+</view>
+<comTab my-property='2'/>

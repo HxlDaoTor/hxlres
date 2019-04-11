@@ -1,0 +1,24 @@
+<!--填写收货地址-->
+<view class='bdy'> 
+  <view class='titlAdd'>收货地址</view>
+  <view class='writeAdd' bindtap='writeAddress'>
+        <!-- <text>{{ addressTxt }}</text> -->
+        <input type='text' value='{{ addressTxt }}' placeholder='请填写收货地址' disabled='false'></input>
+        <text class='iconfont icon-icon'></text>
+  </view>
+  <view class='btn'>
+    <button bindtap='saveAddress'>保存</button>
+  </view>
+</view>
+<!-- 授权弹窗 -->
+<scroll-view  wx:if="{{ isOpenSet }}" class='popupWin'>
+   <view class='popw'>
+        <view class='Popup'>
+            <view class='contxt'>需要授权通讯地址才可以填写收货地址</view>
+            <view class='bttn'>
+              <button bindtap='closePoup'>取消</button>
+              <button open-type="openSetting" bindopensetting="settCallback">去设置</button>
+            </view>
+        </view>   
+   </view>
+</scroll-view>

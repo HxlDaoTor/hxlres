@@ -1,0 +1,25 @@
+<!--pages/welfare/index-->
+<view class='bdy'>
+  <view class='fled'>
+             <text class='tip'>{{ peopleNum }}位参与者</text>
+            <view class='headPor'>
+               <block wx:for='{{ luckyDrawImgs }}' wx:key="{{ index }}">
+                   <image src='{{ item }}'></image>    
+               </block>
+               <block wx:if='{{ luckyDrawImgs.length > 6 }}' wx:key="{{ index }}">
+                  <view></view>
+                  <view></view>
+                  <view></view> 
+                  <view></view>  
+                  <view></view> 
+                  <view></view> 
+                  <view></view> 
+                   <view></view> 
+               </block>
+
+          </view> 
+          <view class='more' wx:if='{{ isLoad }}'>
+             <text bindtap='pagesNumData'>加载更多...</text>
+          </view>
+  </view>
+</view>

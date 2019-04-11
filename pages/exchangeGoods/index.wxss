@@ -1,0 +1,263 @@
+/* pages/exchangeGoods/index.wxss */
+.exchangeMall{
+  background:#f5f5f5;
+  min-height: 100vh;
+overflow: hidden;
+}
+.exchangeMall .head{
+ width:100%;
+ position:relative;
+
+}
+.exchangeMall .head image{
+ width:100%;
+ vertical-align: top;
+
+}
+.exchangeMall .head .luckMony{
+ position: absolute;
+ bottom: 0;
+ height:40px;
+ line-height:40px;
+ background:rgba(0,0,0,.5);
+ right: 0;
+ left:0;
+ padding:0 15px;
+}
+.exchangeMall .head .luckMony text:first-child{
+  color:#fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.exchangeMall .head .luckMony text:last-child{
+  font-size: 12px;
+  color:#ababab;
+  margin-left:10px;
+  text-decoration:line-through;
+}
+.exchangeMall .exchangeName{
+  background:#fff;
+  height:45px;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 15px;
+}
+.exchangeMall .exchangeName view{
+  width:87%;
+}
+.exchangeMall .exchangeName view text:first-child{
+  font-size: 14px;
+
+}
+.exchangeMall .exchangeName view .ismail{
+ background:#fcc6c6;
+ border-radius: 4px;
+ padding:2px 4px;
+ margin-left: 6px;
+ color:#de2c2c;
+ font-size: 10px;
+}
+.exchangeMall .exchangeName .goodsnum{
+ color:#ababab;
+ font-size: 12px;
+}
+.writAddr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#fff;
+  height:45px;
+  padding:0 15px;
+  line-height: 45px;
+}
+.writAddr .gimng{
+  display: flex;
+   flex-direction: row ;
+  align-items: center;
+    font-size: 12px;
+  width:92%;
+}
+.writAddr .gimng text{
+  width:10%;
+}
+.writAddr .gimng input{
+ width:90%; 
+    white-space:nowrap;
+   overflow:hidden;
+   text-overflow: ellipsis;
+ 
+}
+.writAddr  text{
+  font-size: 12PX;
+  color:#ababab; 
+}
+.instructions{
+  margin-top:10px;
+  background:#fff;
+  width:100%;
+  padding:0 10px 10px;
+}
+.instructions{
+  margin-top:10px;
+  background:#fff;
+  width:100%;
+  padding:0 10px 10px;
+  margin-bottom: 80px;
+}
+.instructions .titl{
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+  height:40px;
+  
+}
+.instructions text{
+  line-height: 22px;
+  font-size: 14px;
+  display: block;
+}
+.exchangeBtn{
+  background:#fff;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right:0;
+  padding:6px 10px;
+}
+.exchangeBtn button{
+  height:40px;
+  line-height: 38px;
+  color:#fff;
+  font-size: 14px;
+  background: #ff5555;
+ border-radius: 20px;
+}
+.exchangeBtn button::after{
+  border:none;
+}
+/* 弹窗样式 */
+.Popup{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.6);
+  z-index: 1000;
+}
+.Popup .parent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:100%;
+}
+.Popup .parent .contet{
+  background:#fff;
+  width:300px;
+  border-radius: 6px;
+ padding:15px 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+.Popup .parent .contet .tilit{
+  font-size: 16px;
+  font-weight: bold;
+
+}
+.Popup .parent .contet .contt{
+ color:#ababab;
+ font-size: 12px;
+ margin-top: 15px;
+}
+.Popup .parent .contet .tippo{
+ color:#ff5555;
+ font-size: 16px;
+ margin-top: 15px;
+}
+.Popup .parent .contet button{
+  height:40px;
+  color:#fff;
+  width:70%;
+  line-height: 38px;
+  background: #ff5555;
+  font-size: 14px;
+   border-radius: 20px;
+   margin-top:15px;
+}
+.Popup .parent .contet .closeBtn{
+  width:26px;
+  height:26px;
+  color:#ababab;
+  font-size: 30px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 4px;
+  top:4px;
+}
+/*授权弹窗样式*/
+.popupWin{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.8);
+  z-index: 1000;
+
+
+}
+.popupWin .popw{
+  height: 100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.popupWin .popw .opupCt{
+  width:80%;
+  background:#fff;
+
+ border-radius: 2px;
+ font-size: 14px;
+ color:#4d4d4d;
+}
+.popupWin .popw .opupCt .contxt{
+  text-align: center;
+  height:56px;
+  line-height: 56px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.popupWin .popw .opupCt .bttn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.popupWin .popw .opupCt .bttn button{
+  width: 50%;
+  border:0;
+  background:none;
+  font-size: 14px;
+  border-radius: 0;
+  height: 40px;
+  line-height: 40px;
+}
+.popupWin .popw .opupCt .bttn button:first-child{
+  border-right: 1px solid #f5f5f5;
+}
+.popupWin .popw .opupCt .bttn button:last-child{
+  color:#2f5f91;
+}
+.popupWin .popw .opupCt .bttn button::after{
+  border: none;
+}

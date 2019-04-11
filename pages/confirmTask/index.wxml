@@ -1,0 +1,36 @@
+<!--pages/confirmTask/index.wxml-->
+<view class='bdy'>
+   <view class='taskData'>
+      <view class='title'>奖品详情</view>
+      <view><text>奖品名称：</text><text>{{ subData.prize_name }}</text></view>
+      <view> <text>奖品数量：</text><text>{{ subData.prize_amount }}个</text></view>
+      <view><text>开奖时间：</text><text>{{ subData.kjtimes }}</text></view>
+      <view><text>被复制内容：</text><text>{{ subData.copyconts }}</text></view>
+      <view class='modify' bindtap='callBack'>修改</view>
+   </view>
+   <view class='rules'>
+      <view class='title'><text>发奖规则</text></view>
+      <view><text>1、发起抽奖后，奖品将由审核人员审核。</text></view>
+      <view><text>2、审核成功后，奖品将在首页展示。</text></view>
+   </view>
+   <view class='subBtn'>
+     <button bindtap='subFormData'>确定</button> 
+   </view>
+</view>
+<!-- 弹窗 -->
+<scroll-view class='Popup' wx:if="{{ isSuccessful }}" bindtap='closePop'>
+  <view class='parent'>
+      <view class='contet'>
+             <text class='tilit'>奖品已提交</text>
+             <text class='contt'>请联系商务审核</text>
+             <text class='tippo'>微信号：yizhuan188</text>
+             <button catchtap='copyContxt'>复制微信号</button>
+            <!-- <view class='btun'>
+                <button open-type="share">分享给好友</button>
+                <button bindtap='closePoup'>我知道了</button>
+            </view> -->
+
+            <view class='closeBtn' bindtap='closePop'>×</view>
+      </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,16 @@
+<!--pages/luckRecord/index.wxml-->
+<view class='bdy'>
+<block wx:for='{{ luckList }}' wx:key='index'>
+   <view class='listData'>
+      <view>
+         <text>{{ item.test }}</text>
+         <text>{{ item.number }}</text>
+      </view>
+      <view>
+          <text>{{ item.times }}</text>
+           <text>余额：{{ item.lucky_amount }}</text>
+      </view>
+   </view>
+</block>
+
+</view>

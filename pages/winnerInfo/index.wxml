@@ -1,0 +1,10 @@
+<!--pages/winnerInfo/index.wxml-->
+<view class='bdy'>
+     <view>
+        <image src='{{ winnerImg }}'></image>
+        <text>{{ winnerNick }}</text>
+     </view>
+     <view>
+       <text>{{ winnerAddress }}</text>
+     </view>
+</view>

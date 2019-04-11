@@ -1,0 +1,28 @@
+/* pages/luckRecord/index.wxss */
+.bdy{
+  min-height: 100vh;
+  background:#fff;
+  padding:0 10px;
+}
+.bdy .listData{
+  border-bottom:1px solid #f5f5f5;
+ padding:6px 0;
+}
+.bdy .listData view{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ line-height: 20px;
+}
+.bdy .listData view:first-child text{
+  font-size: 14px;
+  color:#4d4d4d;
+  font-weight: bold;
+}
+.bdy .listData view:first-child text:last-child{
+  color:#ff0000;
+}
+.bdy .listData view:last-child text{
+  font-size: 12px;
+  color:#ababab;
+}

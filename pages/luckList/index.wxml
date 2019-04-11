@@ -1,0 +1,28 @@
+<!--pages/luckList/index.wxml-->
+<!-- <text>pages/luckList/index.wxml</text> /pages/homDetails/index?relea_id={{ item.rel_id }} -->
+<view class='bdy'>
+     <block wx:for="{{ welfarelist }}" wx:key="{{ index }}">
+          <view  hover-class="navigator-hover" class='goods' data-key='{{ item.rel_id }}' data-val='{{ item.is_finish }}' bindtap='navigatorTo'>
+            <image src='{{ item.prize_img}}' mode='widthFix'></image>
+            <text class='titl'>奖品：{{ item.prize_name }}× {{ item.prize_amount }}</text>
+            <view class='flx'><text class='tipp'>{{item.kjtimes}}自动开奖</text><text class='{{ item.is_finish == "审核中"?"tcp":"tip"}}'>{{item.is_finish}}</text></view>
+          </view>     
+     </block>
+</view>
+<!-- 弹窗 -->
+<scroll-view class='Popup' wx:if="{{ isSuccessful }}" bindtap='closePop'>
+  <view class='parent'>
+      <view class='contet'>
+             <text class='tilit'>奖品审核中</text>
+             <text class='contt'>请及时联系商务</text>
+             <text class='tippo'>微信号：yizhuan188</text>
+             <button catchtap='copyContxt'>复制微信号</button>
+            <!-- <view class='btun'>
+                <button open-type="share">分享给好友</button>
+                <button bindtap='closePoup'>我知道了</button>
+            </view> -->
+
+            <view class='closeBtn' bindtap='closePop'>×</view>
+      </view>
+  </view>
+</scroll-view>

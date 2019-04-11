@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "comTab": "../../custom-tab-bar/index"
+  }
+}

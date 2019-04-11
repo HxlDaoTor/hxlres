@@ -1,0 +1,91 @@
+<!--pages/cooper/index.wxml-->
+<view class='bdy'>
+    <view class='introduce'> 
+        <view class='topp'>
+           <view>
+                  <image src='../../resources/shangzhuye_a.png'></image>
+                  <text>我要上首页</text>
+           </view>
+           <text class='intr'>首页分为“每日福利”和“自助福利”，可做企业品牌曝光和微信增粉引流</text>
+        </view>
+
+        <view class='rolw'>
+                <view class='role'>
+                  <view>
+                      <image src='../../resources/xuanze.png'></image>
+                      <text>专人客服</text>
+                  </view>
+                  <view>
+                      <image src='../../resources/xuanze.png'></image>
+                      <text>品牌曝光</text>
+                  </view>
+                  <view>
+                      <image src='../../resources/xuanze.png'></image>
+                      <text>小程序引流</text>
+                  </view>                      
+                </view>    
+              <view class='role'>
+                <view>
+                    <image src='../../resources/xuanze.png'></image>
+                    <text>微信增粉</text>
+                </view>
+                <view>
+                    <image src='../../resources/xuanze.png'></image>
+                    <text>按天展示</text>
+                </view>
+                <view>
+                    <image src='../../resources/xuanze.png'></image>
+                    <text>公众号增粉</text>
+                </view>                      
+              </view>                    
+        </view>
+        
+        <view class='btnSy'>
+            <button bindtap='openPoopup'>上首页自助福利</button>
+        </view>
+        <view class='tip'>
+             *<text>首页“每日福利”针对企业开放合作，如有意向请联系商务。</text>
+        </view>
+    </view>
+    <view class='introduce'>
+        <view class='topp'>
+           <view>
+                  <image src='../../resources/shangzhuye_d.png'></image>
+                  <text>投放广告</text>
+           </view>
+           <text class='intr'>共有4个广告位，每天流量超百万，可做企业品牌曝光和产品推介。</text>
+        </view>  
+    </view>
+    <!-- -->
+    <view class='introduce'>
+        <view class='topp'>
+           <view>
+                  <image src='../../resources/shangzhuye_c.png'></image>
+                  <text>其他合作</text>
+           </view>
+           <text class='intr'>如果你有其他的想法，诚挚邀请你与我们联系。　　　　　　　　　</text>
+        </view>  
+    </view>
+
+</view>
+<view class='fixed'>
+   <button open-type='feedback'>意见反馈</button>
+   <button bindtap='openPoopup'>联系商务</button>
+</view>
+<!-- 弹窗 -->
+<scroll-view class='Popup' wx:if="{{ isSuccessful }}" bindtap='closePop'>
+  <view class='parent'>
+      <view class='contet'>
+             <!-- <text class='tilit'>奖品已提奖</text> -->
+             <text class='contt'>请添加商务微信号</text>
+             <text class='tippo'>yizhuan188</text>
+             <button catchtap='copyContxt'>复制微信号</button>
+            <!-- <view class='btun'>
+                <button open-type="share">分享给好友</button>
+                <button bindtap='closePoup'>我知道了</button>
+            </view> -->
+
+            <view class='closeBtn' bindtap='closePop'>×</view>
+      </view>
+  </view>
+</scroll-view>
